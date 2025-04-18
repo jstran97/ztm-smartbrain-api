@@ -1,0 +1,61 @@
+import express from 'express';
+import bodyParser from 'body-parser';
+import bcrypt from 'bcrypt-nodejs';
+import cors from 'cors';
+import knex from 'knex';
+import handleRegister from './controllers/register.js';
+import handleSignin from './controllers/signin.js';
+import handleProfileGet from './controllers/profile.js';
+import { handleApiCall, handleImage } from './controllers/image.js';
+
+const db = knex({
+    client: 'pg',
+    connection: {
+      host: '127.0.0.1',
+      port: 5432,
+      user: '',
+      password: '',
+      database: 'smart-brain-db',
+    },
+  });
+
+const app = express();
+
+app.use(bodyParser.json());
+// app.use(express.json());
+app.use(cors());
+// Default config of CORS is the equivalent of:
+// {
+//   "origin": "*",
+//   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   "preflightContinue": false,
+//   "optionsSuccessStatus": 204
+// }
+
+app.get('/', (request, response) => {
+    response.send(db.users);
+})
+
+app.post('/signin', (request, response) => {
+    handleSignin(request, response, db, bcrypt);
+})
+
+app.post('/register', (request, response) => {
+    handleRegister(request, response, db, bcrypt);
+})
+
+app.get('/profile/:id', (request, response) => {
+    handleProfileGet(request, response, db);
+})
+
+app.put('/image', (request, response) => {
+    handleImage(request, response, db);
+})
+
+app.post('/imageUrl', (request, response) => {
+    handleApiCall(request, response);
+})
+
+app.listen(3000, () => {
+    console.log('App is running on Port 3000');
+})
