@@ -46,7 +46,7 @@ app.use(cors());
 // }
 
 app.get('/', (request, response) => {
-    response.send(db.users);
+    response.send('Success!')
 })
 
 app.post('/signin', (request, response) => {
