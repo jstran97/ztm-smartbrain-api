@@ -6,7 +6,6 @@ const handleApiCall = (request, response) => {
     console.log(`request.body: ${request.body.input}`);
     console.log(`request.body.input Type: ${typeof(request.body.input)}`);
 
-    const PAT = '65932f832bc947a2953fd5f434062c34';
     const USER_ID = 'clarifai';
     const APP_ID = 'main';
     const MODEL_ID = 'face-detection';
@@ -31,7 +30,7 @@ const handleApiCall = (request, response) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Key ' + PAT
+            'Authorization': 'Key ' + process.env.PERSONAL_ACCESS_TOKEN
         },
         body: raw
     };
