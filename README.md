@@ -1,6 +1,6 @@
 # ZTM Academy - Final Project: SmartBrain Back-End
 
-This repository is for the web server (back-end) of the [web application](https://github.com/jstran97/ztm-smartbrain/tree/main). It was constructed using Express.js and PostgreSQL.
+This repository is for the web server (back-end) of the [web application](https://github.com/jstran97/ztm-smartbrain/tree/main). It was constructed using Express.js and PostgreSQL. The web server communicates with the front-end (React.js), database (PostgreSQL), and Clarifai's Face Detection API.
 
 # Getting Started:
 
