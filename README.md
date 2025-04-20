@@ -1,7 +1,5 @@
 # ZTM Academy - Final Project: SmartBrain Back-End
 
-Web Server / Back-end portion of Final project for ZTM course
-
 This repository is for the web server (back-end) of the [web application](https://github.com/jstran97/ztm-smartbrain/tree/main). It was constructed using Express.js and PostgreSQL.
 
 1. Clone this repo
