@@ -1,6 +1,3 @@
-// const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
-// import { ClarifaiStub, grpc } from 'clarifai-nodejs-grpc';
-
 const handleApiCall = (request, response) => {
     console.log('Made it into BACK-END / SERVER image.js');
     console.log(`request.body: ${request.body.input}`);
@@ -44,8 +41,6 @@ const handleApiCall = (request, response) => {
     .catch(err => console.log('Cannot get data from Clarifai API', err));
 
 };
-
-
 
 const handleImage = (request, response, db) => {
     const { id } = request.body;

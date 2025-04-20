@@ -8,18 +8,6 @@ import handleSignin from './controllers/signin.js';
 import handleProfileGet from './controllers/profile.js';
 import { handleApiCall, handleImage } from './controllers/image.js';
 
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//       connectionString: process.env.DATABASE_URL,
-//         host: '127.0.0.1',
-//       port: 5432,
-//       user: '',
-//       password: '',
-//       database: 'smart-brain-db',
-//     },
-//   });
-
 const db = knex({
     client: 'pg',
     connection: {
