@@ -1,6 +1,6 @@
-# ztm-smartbrain-api
+# ZTM Academy - Final Project: SmartBrain Back-End
 
-Server / Back-end portion of Final project for ZTM course
+Web Server / Back-end portion of Final project for ZTM course
 
 1. Clone this repo
 2. Run `npm install`
